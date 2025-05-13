@@ -11,7 +11,7 @@ after you launch the game, you will be faced with the stats screen, delete the d
 
 
 ## stats screen layout
-column 1 contains the number of players, starting resources for each player, number of wood and metal nodes, map size by tile, resources earned per farm or mine each turn and the bonus received for being adjacent to the main building
+column 1 contains the number of players, starting resources for each player, number of wood and metal nodes, map size by tile, resources earned per farm or mine each turn(disabled for testing reasons, edit in the grid) and the bonus received for being adjacent to the main building
 column 2 contains the max number of turns and the max time (second) for each turn
 the grid on the left is unit stats as follows
 fort: health armor income population
