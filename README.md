@@ -15,9 +15,22 @@ For feedback, suggestions, or issues, feel free to open an **issue** on this Git
 6) check building, units and systems sections for more info
 
 ## building:
-1) fort: the first phase of the main building
+1) fort: the first phase of the main building, you can train a horse or a spearman, and you can evolve to castle
+2) castle: second phase, can upgrade to mega castle
+3) mega castle: third and last phase
+4) farm: gives food each turn with bonus if its adjacent to main
+5) mine: gives wood or metal each turn with bonus if its adjacent to main, can only be placed on metal or wood nodes
+6) barracks, allows to train other units
+7) wooden wall: an obstacle, requires castle phase to be built
+8) stone wall: the more annoying version of wooden wall, also requires castle phase
 
 ## units
+*all units can move, attack once per turn, and build any building except for the main buildings*
+1) spearman: can attack an adjacent unit and does bonus damage to horses
+2) horse: moves a lot, can only attack by moving to the tile the target is on, since a tile cant have two units on it, if the attack doesnt kill the target, the horse must have an extra move after attacking to move to a different empty tile, or else the attack isnt performed
+3) musketeer: ranged unit, check systems.7
+4) cannon: heavy ranged unit, check systems.7
+5) knight: heavily armored unit, check systems.2, can attack an adjacent unit
 
 ## systems
 1) the player with the last main building standing wins, if max number of turns is reached then the player with more health on their main wins, if there is a tie the resources and units are calculated
@@ -27,6 +40,8 @@ For feedback, suggestions, or issues, feel free to open an **issue** on this Git
 5) each turn after selecting your main building you can choose one resource type and get some of it
 6) the number of units you can have at a moment is limited by yout population
 7) ranged units can only target and adjacent tile for attacking, then its projectile will move for its range in the selected direction
+8) upgrading main building is the only way to heal it, sometime it may be wiser to not upgrade
+9) units trained cant move on their first turn
 
 ## stats screen layout
 column 1 contains the number of players, starting resources for each player, number of wood and metal nodes, map size by tile, resources earned per farm or mine each turn(disabled for testing reasons, edit in the rows on right) and the bonus received for being adjacent to the main building
