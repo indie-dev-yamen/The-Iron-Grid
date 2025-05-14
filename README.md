@@ -8,7 +8,25 @@ For feedback, suggestions, or issues, feel free to open an **issue** on this Git
 
 ## How to play
 1) after you launch the game, you will be faced with the stats screen, delete the default value to see what is it for, or check the stats screen info later in this file, change them as you wish and press start
-2) 
+2) on the top of your screen you will find, left to write, information text, currently selected object icon which is default none and it can be pressed to clear selection or cancel commands, time left for this turn, navigation arrows you can press to move around the game grid, manual end turn button, turn information text, resources of current player
+3) you will see the game grid, green tiles are open space, tiles with wood are wood node resources, grey tiles are metal node resources
+4) on the first turn you are asked to choose any tile to place your main building at, your choice cant be changed after so be wise, after you place your building end your turn and pass for the next player
+5) after all players get their castles the true game starts, take turn to gather resources, build, train units, and destroy your enemies
+6) check building, units and systems sections for more info
+
+## building:
+1) fort: the first phase of the main building
+
+## units
+
+## systems
+1) the player with the last main building standing wins, if max number of turns is reached then the player with more health on their main wins, if there is a tie the resources and units are calculated
+2) a unit armor is a special value that, to deal damage to an armored unit, you must do more damage than its armor in one turn, or else your damage is totally ignored
+3) if you choose to build or train a thing or attack or move a unit, you are asked to choose an adjacent tile for it to be placed, you can cancel the action by cancelling your selection by presing that button on top left
+4) farms and mines adjacent to your main building give more resources
+5) each turn after selecting your main building you can choose one resource type and get some of it
+6) the number of units you can have at a moment is limited by yout population
+7) ranged units can only target and adjacent tile for attacking, then its projectile will move for its range in the selected direction
 
 ## stats screen layout
 column 1 contains the number of players, starting resources for each player, number of wood and metal nodes, map size by tile, resources earned per farm or mine each turn(disabled for testing reasons, edit in the rows on right) and the bonus received for being adjacent to the main building
