@@ -9,6 +9,15 @@ This project is licensed under the **Creative Commons BY-NC-ND 4.0 License**. Li
 
 ---
 
+## ℹ️ Contact
+
+Got feedback or suggestions? Found a bug? Reach out!
+
+* Open an issue on this GitHub repo
+* Or email: [yamenebajy@gmail.com](mailto:yamenebajy@gmail.com)
+
+---
+
 **The Iron Grid** is a local turn-based strategy game built for multiple players on a single device. Choose your castle location, gather resources, train your army, and dominate your enemies in tactical warfare. With focus on strategy, customizable stats, and evolving structures, every match delivers a fresh and competitive experience.
 
 ---
@@ -145,14 +154,6 @@ This project is licensed under the **Creative Commons BY-NC-ND 4.0 License**. Li
 
   13) knight: health moves\_per\_turn population\_required food\_cost wood\_cost metal\_cost main\_building\_phase\_required damage
 
----
-
-## ℹ️ Contact
-
-Got feedback or suggestions? Found a bug? Reach out!
-
-* Open an issue on this GitHub repo
-* Or email: [yamenebajy@gmail.com](mailto:yamenebajy@gmail.com)
 
 ---
 
