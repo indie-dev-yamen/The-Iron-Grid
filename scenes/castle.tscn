@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://5swibq4yqk01"]
+
+[ext_resource type="Script" path="res://castle.gd" id="1_vjjrx"]
+[ext_resource type="Texture2D" uid="uid://bquw26prom8s0" path="res://fort.png" id="2_0x21h"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_n4mdo"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_4ubuy"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x1d5l"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_4ubuy")
+width = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_74rl0"]
+size = Vector2(50, 50)
+
+[node name="castle" type="Node2D"]
+script = ExtResource("1_vjjrx")
+metadata/selectable = true
+
+[node name="bg" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_n4mdo")
+texture = SubResource("GradientTexture1D_x1d5l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_74rl0")
+texture = ExtResource("2_0x21h")

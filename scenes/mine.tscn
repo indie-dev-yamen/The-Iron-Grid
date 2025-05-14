@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://caqamfmfkx6kr"]
+
+[ext_resource type="Script" path="res://mine.gd" id="1_skf1p"]
+[ext_resource type="Texture2D" uid="uid://dbpr2afkmgiiu" path="res://mine.png" id="2_vpxdc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_rjhw6"]
+resource_local_to_scene = true
+size = Vector2(50, 50)
+
+[sub_resource type="Gradient" id="Gradient_ilnfe"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gi5vf"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_ilnfe")
+width = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_dun2h"]
+size = Vector2(32, 32)
+
+[node name="mine" type="Node2D"]
+script = ExtResource("1_skf1p")
+
+[node name="bg" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_rjhw6")
+texture = SubResource("GradientTexture1D_gi5vf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_dun2h")
+texture = ExtResource("2_vpxdc")

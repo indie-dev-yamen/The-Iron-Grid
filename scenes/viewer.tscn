@@ -1,0 +1,212 @@
+[gd_scene load_steps=22 format=3 uid="uid://dtvvdwbsuygv"]
+
+[ext_resource type="Script" path="res://viewer.gd" id="1_i6gi1"]
+[ext_resource type="Texture2D" uid="uid://dx8md0pxumkui" path="res://right_off.png" id="1_mm1qs"]
+[ext_resource type="Texture2D" uid="uid://dvfovfup0imhy" path="res://right_on.png" id="2_qdmmr"]
+[ext_resource type="Texture2D" uid="uid://bdeyesvf4k7ch" path="res://left_off.png" id="3_4na3f"]
+[ext_resource type="Texture2D" uid="uid://buwqkjw5sx0ff" path="res://left_on.png" id="4_ndp2q"]
+[ext_resource type="Texture2D" uid="uid://cde0fgsp6rx0b" path="res://up_off.png" id="5_6adi8"]
+[ext_resource type="Texture2D" uid="uid://btdqpf6vqyoo6" path="res://up_on.png" id="6_jjfhg"]
+[ext_resource type="Texture2D" uid="uid://cvyx8hxrya4np" path="res://down_off.png" id="7_okoej"]
+[ext_resource type="Texture2D" uid="uid://ckvbasq6pvh6j" path="res://down_on.png" id="8_onnrt"]
+[ext_resource type="Texture2D" uid="uid://dlxq20tuqyjny" path="res://wheat.png" id="10_vduq7"]
+[ext_resource type="Texture2D" uid="uid://cgupwpiuahpqb" path="res://wood.png" id="11_jof5v"]
+[ext_resource type="Texture2D" uid="uid://rgngo3pc8n7c" path="res://metal.png" id="12_qhter"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1maw"]
+size = Vector2(46, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ctcg"]
+size = Vector2(46, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebw5h"]
+size = Vector2(46, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl543"]
+size = Vector2(46, 46)
+
+[sub_resource type="Gradient" id="Gradient_41lmg"]
+offsets = PackedFloat32Array(0, 0.493506, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5utlf"]
+gradient = SubResource("Gradient_41lmg")
+width = 30
+height = 30
+fill_to = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py3p0"]
+size = Vector2(40, 40)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rowkv"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m3py"]
+size = Vector2(48, 48)
+
+[node name="viewer" type="Node2D"]
+script = ExtResource("1_i6gi1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="move_right" type="TouchScreenButton" parent="."]
+position = Vector2(46, -300)
+texture_normal = ExtResource("1_mm1qs")
+texture_pressed = ExtResource("2_qdmmr")
+shape = SubResource("RectangleShape2D_l1maw")
+action = "view_right"
+
+[node name="selected" type="TouchScreenButton" parent="."]
+position = Vector2(-421, -276)
+shape = SubResource("RectangleShape2D_l1maw")
+action = "reset_select"
+
+[node name="move_left" type="TouchScreenButton" parent="."]
+position = Vector2(-92, -300)
+texture_normal = ExtResource("3_4na3f")
+texture_pressed = ExtResource("4_ndp2q")
+shape = SubResource("RectangleShape2D_8ctcg")
+action = "view_left"
+
+[node name="move_up" type="TouchScreenButton" parent="."]
+position = Vector2(-46, -300)
+texture_normal = ExtResource("5_6adi8")
+texture_pressed = ExtResource("6_jjfhg")
+shape = SubResource("RectangleShape2D_ebw5h")
+action = "view_up"
+
+[node name="move_down" type="TouchScreenButton" parent="."]
+position = Vector2(0, -300)
+texture_normal = ExtResource("7_okoej")
+texture_pressed = ExtResource("8_onnrt")
+shape = SubResource("RectangleShape2D_sl543")
+action = "view_down"
+
+[node name="end_turn" type="TouchScreenButton" parent="."]
+position = Vector2(120, -293)
+texture_normal = SubResource("GradientTexture2D_5utlf")
+shape = SubResource("RectangleShape2D_py3p0")
+action = "end_turn"
+
+[node name="turn_of" type="RichTextLabel" parent="."]
+offset_left = 174.0
+offset_top = -291.0
+offset_right = 262.0
+offset_bottom = -189.0
+theme_override_font_sizes/normal_font_size = 20
+text = "turn of:
+"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+offset_left = -201.0
+offset_top = -303.0
+offset_right = -122.0
+offset_bottom = -238.0
+theme_override_font_sizes/normal_font_size = 20
+text = "turn:
+
+"
+
+[node name="time_left" type="RichTextLabel" parent="."]
+offset_left = -298.0
+offset_top = -301.0
+offset_right = -219.0
+offset_bottom = -236.0
+theme_override_font_sizes/normal_font_size = 20
+text = "
+
+"
+
+[node name="food" type="RichTextLabel" parent="."]
+offset_left = 287.0
+offset_top = -290.0
+offset_right = 366.0
+offset_bottom = -225.0
+theme_override_font_sizes/normal_font_size = 20
+text = "
+
+"
+
+[node name="metal" type="RichTextLabel" parent="."]
+offset_left = 445.0
+offset_top = -290.0
+offset_right = 524.0
+offset_bottom = -225.0
+theme_override_font_sizes/normal_font_size = 20
+text = "
+
+"
+
+[node name="wood" type="RichTextLabel" parent="."]
+offset_left = 362.0
+offset_top = -290.0
+offset_right = 441.0
+offset_bottom = -225.0
+theme_override_font_sizes/normal_font_size = 20
+text = "
+
+"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(303, -304)
+rotation = 3.14159
+mesh = SubResource("QuadMesh_rowkv")
+texture = ExtResource("10_vduq7")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(388, -304)
+rotation = 3.14159
+mesh = SubResource("QuadMesh_rowkv")
+texture = ExtResource("11_jof5v")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+position = Vector2(461, -304)
+rotation = 3.14159
+mesh = SubResource("QuadMesh_rowkv")
+texture = ExtResource("12_qhter")
+
+[node name="special_action1" type="TouchScreenButton" parent="."]
+position = Vector2(461, -93)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa1"
+
+[node name="special_action2" type="TouchScreenButton" parent="."]
+position = Vector2(461, -45)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa2"
+
+[node name="special_action3" type="TouchScreenButton" parent="."]
+position = Vector2(461, 3)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa3"
+
+[node name="special_action4" type="TouchScreenButton" parent="."]
+position = Vector2(461, 51)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa4"
+
+[node name="special_action5" type="TouchScreenButton" parent="."]
+position = Vector2(509, -93)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa5"
+
+[node name="special_action6" type="TouchScreenButton" parent="."]
+position = Vector2(509, -45)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa6"
+
+[node name="special_action7" type="TouchScreenButton" parent="."]
+position = Vector2(509, 3)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa7"
+
+[node name="special_action8" type="TouchScreenButton" parent="."]
+position = Vector2(509, 51)
+shape = SubResource("RectangleShape2D_5m3py")
+action = "sa8"
+
+[node name="info" type="RichTextLabel" parent="."]
+offset_left = -550.0
+offset_top = -313.0
+offset_right = -457.0
+offset_bottom = -94.0

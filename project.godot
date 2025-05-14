@@ -1,0 +1,96 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="game_tb_rts_andr"
+run/main_scene="res://all_root.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+values="*res://values.gd"
+
+[input]
+
+view_up={
+"deadzone": 0.5,
+"events": []
+}
+view_down={
+"deadzone": 0.5,
+"events": []
+}
+view_right={
+"deadzone": 0.5,
+"events": []
+}
+view_left={
+"deadzone": 0.5,
+"events": []
+}
+pressed_tile={
+"deadzone": 0.5,
+"events": []
+}
+end_turn={
+"deadzone": 0.5,
+"events": []
+}
+reset_select={
+"deadzone": 0.5,
+"events": []
+}
+sa1={
+"deadzone": 0.5,
+"events": []
+}
+sa2={
+"deadzone": 0.5,
+"events": []
+}
+sa3={
+"deadzone": 0.5,
+"events": []
+}
+sa4={
+"deadzone": 0.5,
+"events": []
+}
+sa5={
+"deadzone": 0.5,
+"events": []
+}
+sa6={
+"deadzone": 0.5,
+"events": []
+}
+sa7={
+"deadzone": 0.5,
+"events": []
+}
+sa8={
+"deadzone": 0.5,
+"events": []
+}
+start={
+"deadzone": 0.5,
+"events": []
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

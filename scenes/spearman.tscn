@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2oe5s6dr43fd"]
+
+[ext_resource type="Script" path="res://spearman.gd" id="1_iftlk"]
+[ext_resource type="Texture2D" uid="uid://cb0wefbje7txu" path="res://spearman.png" id="2_4vrk1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_e8q8v"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_s0uur"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dm85l"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_s0uur")
+width = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_ul3bq"]
+size = Vector2(50, 50)
+
+[node name="spearman" type="Node2D"]
+script = ExtResource("1_iftlk")
+metadata/selectable = true
+
+[node name="bg" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_e8q8v")
+texture = SubResource("GradientTexture1D_dm85l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_ul3bq")
+texture = ExtResource("2_4vrk1")

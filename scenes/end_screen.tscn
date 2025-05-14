@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ys2iaylsa78t"]
+
+[ext_resource type="Texture2D" uid="uid://dgva55myigryx" path="res://barracks.png" id="1_amnmf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ofgkt"]
+size = Vector2(1200, 1000)
+
+[node name="end_screen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_ofgkt")
+texture = ExtResource("1_amnmf")
+
+[node name="TextEdit" type="RichTextLabel" parent="."]
+offset_left = -428.0
+offset_top = -288.0
+offset_right = 467.0
+offset_bottom = 212.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 0.933333, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.933333, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.933333, 0, 1)
+theme_override_font_sizes/normal_font_size = 100

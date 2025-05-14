@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvqpa7314w8he"]
+
+[ext_resource type="Texture2D" uid="uid://66r8hg0o5xaa" path="res://metal_tile.png" id="1_434ws"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_etlc7"]
+size = Vector2(64, 64)
+
+[node name="metal_tile" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_etlc7")
+texture = ExtResource("1_434ws")

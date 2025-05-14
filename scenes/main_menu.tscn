@@ -1,0 +1,1353 @@
+[gd_scene load_steps=22 format=3 uid="uid://lc26wu04hq1n"]
+
+[ext_resource type="Texture2D" uid="uid://bhw2iu0l4limu" path="res://start.png" id="1_kbgbf"]
+[ext_resource type="Texture2D" uid="uid://bquw26prom8s0" path="res://fort.png" id="2_fa7xl"]
+[ext_resource type="Texture2D" uid="uid://brr2nht7f00dt" path="res://castle.png" id="3_35o02"]
+[ext_resource type="Texture2D" uid="uid://7om0bckwbxvp" path="res://mega_castle.png" id="4_6sleo"]
+[ext_resource type="Texture2D" uid="uid://baqwiyqtpdxvr" path="res://farm.png" id="5_f7180"]
+[ext_resource type="Texture2D" uid="uid://dgva55myigryx" path="res://barracks.png" id="6_aqaks"]
+[ext_resource type="Texture2D" uid="uid://dbpr2afkmgiiu" path="res://mine.png" id="7_5duny"]
+[ext_resource type="Texture2D" uid="uid://qef0kjqm0g52" path="res://wood_wall.jpg" id="8_gsxtp"]
+[ext_resource type="Texture2D" uid="uid://c76kctj5ljehx" path="res://stone_wall.png" id="9_mtnve"]
+[ext_resource type="Texture2D" uid="uid://cb0wefbje7txu" path="res://spearman.png" id="10_17k0k"]
+[ext_resource type="Texture2D" uid="uid://bysij0481ctak" path="res://horse.png" id="11_mkxog"]
+[ext_resource type="Texture2D" uid="uid://b1o6k080arqgw" path="res://musket.png" id="12_7qo1q"]
+[ext_resource type="Texture2D" uid="uid://dikjq33snwrtq" path="res://cannon.png" id="13_xly4a"]
+[ext_resource type="Texture2D" uid="uid://bu1r1te6vxjwq" path="res://knight.png" id="14_mrlyi"]
+[ext_resource type="Texture2D" uid="uid://c5x3klytn2yi6" path="res://logo_line.png" id="15_ekroy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ekigy"]
+size = Vector2(1600, 900)
+
+[sub_resource type="Gradient" id="Gradient_6gqqi"]
+colors = PackedColorArray(0, 0, 0, 1, 0.446777, 0.446777, 0.446777, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ca6iy"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q2c0f"]
+color_ramp = SubResource("Gradient_6gqqi")
+noise = SubResource("FastNoiseLite_ca6iy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoalt"]
+size = Vector2(200, 50)
+
+[sub_resource type="QuadMesh" id="QuadMesh_86cdn"]
+
+[node name="main_menu" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_ekigy")
+texture = SubResource("NoiseTexture2D_q2c0f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -20)
+zoom = Vector2(0.9, 0.9)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -498.0
+offset_top = -280.0
+offset_right = -338.0
+offset_bottom = -248.0
+text = "2"
+placeholder_text = "number of players
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit16" type="TextEdit" parent="."]
+offset_left = -290.0
+offset_top = -283.0
+offset_right = -130.0
+offset_bottom = -251.0
+text = "100"
+placeholder_text = "max turns number"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit17" type="TextEdit" parent="."]
+offset_left = -290.0
+offset_top = -246.0
+offset_right = -130.0
+offset_bottom = -214.0
+text = "30"
+placeholder_text = "seconds for turn
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit8" type="TextEdit" parent="."]
+offset_left = -498.0
+offset_top = 40.0
+offset_right = -338.0
+offset_bottom = 72.0
+text = "20"
+placeholder_text = "map size x
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit10" type="TextEdit" parent="."]
+offset_left = -498.0
+offset_top = 72.0
+offset_right = -338.0
+offset_bottom = 104.0
+text = "20"
+placeholder_text = "map size y
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = -500.0
+offset_top = -140.0
+offset_right = -452.0
+offset_bottom = -108.0
+text = "6"
+placeholder_text = "food
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+offset_left = -452.0
+offset_top = -140.0
+offset_right = -404.0
+offset_bottom = -108.0
+text = "6"
+placeholder_text = "wood
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit4" type="TextEdit" parent="."]
+offset_left = -404.0
+offset_top = -140.0
+offset_right = -356.0
+offset_bottom = -108.0
+text = "2"
+placeholder_text = "metal"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit5" type="TextEdit" parent="."]
+offset_left = -500.0
+offset_top = -210.0
+offset_right = -340.0
+offset_bottom = -143.0
+text = "starting resources
+food/wood/metal"
+editable = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit6" type="TextEdit" parent="."]
+offset_left = -499.0
+offset_top = -17.0
+offset_right = -451.0
+offset_bottom = 15.0
+text = "3
+"
+placeholder_text = "wood
+
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit7" type="TextEdit" parent="."]
+offset_left = -421.0
+offset_top = -17.0
+offset_right = -373.0
+offset_bottom = 15.0
+text = "2"
+placeholder_text = "metal
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit9" type="TextEdit" parent="."]
+offset_left = -499.0
+offset_top = -87.0
+offset_right = -339.0
+offset_bottom = -20.0
+text = "resource nodes
+wood     /    metal"
+editable = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit11" type="TextEdit" parent="."]
+offset_left = -496.0
+offset_top = 199.0
+offset_right = -448.0
+offset_bottom = 231.0
+text = "-"
+placeholder_text = "food
+"
+editable = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit15" type="TextEdit" parent="."]
+offset_left = -352.0
+offset_top = 199.0
+offset_right = -304.0
+offset_bottom = 231.0
+text = "1"
+placeholder_text = "bonus
+"
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit12" type="TextEdit" parent="."]
+offset_left = -448.0
+offset_top = 199.0
+offset_right = -400.0
+offset_bottom = 231.0
+text = "-"
+placeholder_text = "wood
+"
+editable = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit13" type="TextEdit" parent="."]
+offset_left = -400.0
+offset_top = 199.0
+offset_right = -352.0
+offset_bottom = 231.0
+text = "-"
+placeholder_text = "metal"
+editable = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextEdit14" type="TextEdit" parent="."]
+offset_left = -496.0
+offset_top = 129.0
+offset_right = -282.0
+offset_bottom = 196.0
+text = "earning per farm/mine
+food/wood/metal/bonus"
+editable = false
+drag_and_drop_selection_enabled = false
+
+[node name="start" type="TouchScreenButton" parent="."]
+position = Vector2(-507, 257)
+texture_normal = ExtResource("1_kbgbf")
+shape = SubResource("RectangleShape2D_hoalt")
+action = "start"
+
+[node name="fort" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -350.0
+offset_bottom = -300.0
+texture = ExtResource("2_fa7xl")
+
+[node name="castle" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -300.0
+offset_bottom = -250.0
+texture = ExtResource("3_35o02")
+
+[node name="mega_castle" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -250.0
+offset_bottom = -200.0
+texture = ExtResource("4_6sleo")
+
+[node name="farm" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -200.0
+offset_bottom = -150.0
+texture = ExtResource("5_f7180")
+
+[node name="stats" type="TextEdit" parent="."]
+offset_top = -350.0
+offset_right = 50.0
+offset_bottom = -300.0
+text = "6"
+placeholder_text = "hp"
+
+[node name="stats2" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -350.0
+offset_right = 100.0
+offset_bottom = -300.0
+text = "3"
+placeholder_text = "armor"
+
+[node name="stats3" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -350.0
+offset_right = 150.0
+offset_bottom = -300.0
+text = "1"
+placeholder_text = "inc"
+
+[node name="stats4" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -350.0
+offset_right = 200.0
+offset_bottom = -300.0
+text = "12"
+placeholder_text = "pop"
+
+[node name="stats5" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -350.0
+offset_right = 250.0
+offset_bottom = -300.0
+
+[node name="stats6" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -350.0
+offset_right = 300.0
+offset_bottom = -300.0
+
+[node name="stats7" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -350.0
+offset_right = 350.0
+offset_bottom = -300.0
+
+[node name="stats8" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -350.0
+offset_right = 400.0
+offset_bottom = -300.0
+
+[node name="stats9" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -350.0
+offset_right = 450.0
+offset_bottom = -300.0
+
+[node name="stats10" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -350.0
+offset_right = 500.0
+offset_bottom = -300.0
+
+[node name="stats11" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -350.0
+offset_right = 550.0
+offset_bottom = -300.0
+
+[node name="barracks" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -150.0
+offset_bottom = -100.0
+texture = ExtResource("6_aqaks")
+
+[node name="stats45" type="TextEdit" parent="."]
+offset_top = -150.0
+offset_right = 50.0
+offset_bottom = -100.0
+text = "6"
+placeholder_text = "hp"
+
+[node name="stats46" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = -100.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats47" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = -100.0
+text = "6"
+placeholder_text = "food"
+
+[node name="stats48" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = -100.0
+text = "6"
+placeholder_text = "wood"
+
+[node name="stats49" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = -100.0
+text = "3"
+placeholder_text = "metal"
+
+[node name="stats50" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -100.0
+
+[node name="stats51" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -150.0
+offset_right = 350.0
+offset_bottom = -100.0
+
+[node name="stats52" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = -100.0
+
+[node name="stats53" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -150.0
+offset_right = 450.0
+offset_bottom = -100.0
+
+[node name="stats54" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -150.0
+offset_right = 500.0
+offset_bottom = -100.0
+
+[node name="stats55" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -150.0
+offset_right = 550.0
+offset_bottom = -100.0
+
+[node name="mine" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -100.0
+offset_bottom = -50.0
+texture = ExtResource("7_5duny")
+
+[node name="stats56" type="TextEdit" parent="."]
+offset_top = -100.0
+offset_right = 50.0
+offset_bottom = -50.0
+text = "3"
+placeholder_text = "hp"
+
+[node name="stats57" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -50.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats58" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = -50.0
+text = "1"
+placeholder_text = "inc"
+
+[node name="stats59" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = -50.0
+text = "0"
+placeholder_text = "food"
+
+[node name="stats60" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = -50.0
+text = "4"
+placeholder_text = "wood"
+
+[node name="stats61" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = -50.0
+text = "1"
+placeholder_text = "metal"
+
+[node name="stats62" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -100.0
+offset_right = 350.0
+offset_bottom = -50.0
+
+[node name="stats63" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = -50.0
+
+[node name="stats64" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -100.0
+offset_right = 450.0
+offset_bottom = -50.0
+
+[node name="stats65" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -100.0
+offset_right = 500.0
+offset_bottom = -50.0
+
+[node name="stats66" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -100.0
+offset_right = 550.0
+offset_bottom = -50.0
+
+[node name="wall_wood" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = -50.0
+texture = ExtResource("8_gsxtp")
+
+[node name="stats67" type="TextEdit" parent="."]
+offset_top = -50.0
+offset_right = 50.0
+text = "3"
+placeholder_text = "hp"
+
+[node name="stats68" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -50.0
+offset_right = 100.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats69" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -50.0
+offset_right = 150.0
+text = "0"
+placeholder_text = "food"
+
+[node name="stats70" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -50.0
+offset_right = 200.0
+text = "1"
+placeholder_text = "wood"
+
+[node name="stats71" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -50.0
+offset_right = 250.0
+text = "0"
+placeholder_text = "metal"
+
+[node name="stats72" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -50.0
+offset_right = 300.0
+
+[node name="stats73" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -50.0
+offset_right = 350.0
+
+[node name="stats74" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -50.0
+offset_right = 400.0
+
+[node name="stats75" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -50.0
+offset_right = 450.0
+
+[node name="stats76" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -50.0
+offset_right = 500.0
+
+[node name="stats77" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -50.0
+offset_right = 550.0
+
+[node name="wall_stone" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_bottom = 50.0
+texture = ExtResource("9_mtnve")
+
+[node name="stats78" type="TextEdit" parent="."]
+offset_right = 50.0
+offset_bottom = 50.0
+text = "4"
+placeholder_text = "hp"
+
+[node name="stats79" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "3"
+placeholder_text = "armor"
+
+[node name="stats80" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_right = 150.0
+offset_bottom = 50.0
+text = "0"
+placeholder_text = "food"
+
+[node name="stats81" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_right = 200.0
+offset_bottom = 50.0
+text = "3"
+placeholder_text = "wood"
+
+[node name="stats82" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_right = 250.0
+offset_bottom = 50.0
+text = "0"
+placeholder_text = "metal"
+
+[node name="stats83" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_right = 300.0
+offset_bottom = 50.0
+
+[node name="stats84" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_right = 350.0
+offset_bottom = 50.0
+
+[node name="stats85" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_right = 400.0
+offset_bottom = 50.0
+
+[node name="stats86" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_right = 450.0
+offset_bottom = 50.0
+
+[node name="stats87" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_right = 500.0
+offset_bottom = 50.0
+
+[node name="stats88" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_right = 550.0
+offset_bottom = 50.0
+
+[node name="spear" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = 50.0
+offset_bottom = 100.0
+texture = ExtResource("10_17k0k")
+
+[node name="stats89" type="TextEdit" parent="."]
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 100.0
+text = "1"
+placeholder_text = "hp"
+
+[node name="stats90" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 100.0
+text = "1"
+placeholder_text = "moves"
+
+[node name="stats91" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 100.0
+text = "1"
+placeholder_text = "pop"
+
+[node name="stats92" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 100.0
+text = "o"
+placeholder_text = "armor"
+
+[node name="stats93" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 100.0
+text = "2"
+placeholder_text = "food"
+
+[node name="stats94" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 100.0
+text = "2"
+placeholder_text = "wood"
+
+[node name="stats95" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 100.0
+text = "0"
+placeholder_text = "metal"
+
+[node name="stats96" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = 50.0
+offset_right = 400.0
+offset_bottom = 100.0
+text = "0"
+placeholder_text = "lvl"
+
+[node name="stats97" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 100.0
+text = "1"
+placeholder_text = "dmg"
+
+[node name="stats98" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 100.0
+text = "2"
+placeholder_text = "horse dmg"
+
+[node name="stats99" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 100.0
+
+[node name="horse" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = 100.0
+offset_bottom = 150.0
+texture = ExtResource("11_mkxog")
+
+[node name="stats100" type="TextEdit" parent="."]
+offset_top = 100.0
+offset_right = 50.0
+offset_bottom = 150.0
+text = "2"
+placeholder_text = "hp"
+
+[node name="stats101" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 150.0
+text = "3"
+placeholder_text = "moves"
+
+[node name="stats102" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 150.0
+offset_bottom = 150.0
+text = "2"
+placeholder_text = "pop"
+
+[node name="stats103" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 200.0
+offset_bottom = 150.0
+text = "o"
+placeholder_text = "armor"
+
+[node name="stats104" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 250.0
+offset_bottom = 150.0
+text = "6"
+placeholder_text = "food"
+
+[node name="stats105" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 150.0
+text = "0"
+placeholder_text = "wood"
+
+[node name="stats106" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 350.0
+offset_bottom = 150.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats107" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = 150.0
+text = "0"
+placeholder_text = "lvl"
+
+[node name="stats108" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = 100.0
+offset_right = 450.0
+offset_bottom = 150.0
+text = "1"
+placeholder_text = "dmg"
+
+[node name="stats109" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = 100.0
+offset_right = 500.0
+offset_bottom = 150.0
+
+[node name="stats110" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 550.0
+offset_bottom = 150.0
+
+[node name="musket" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = 150.0
+offset_bottom = 200.0
+texture = ExtResource("12_7qo1q")
+
+[node name="stats111" type="TextEdit" parent="."]
+offset_top = 150.0
+offset_right = 50.0
+offset_bottom = 200.0
+text = "1"
+placeholder_text = "hp"
+
+[node name="stats112" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 100.0
+offset_bottom = 200.0
+text = "1"
+placeholder_text = "moves"
+
+[node name="stats113" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 200.0
+text = "1"
+placeholder_text = "pop"
+
+[node name="stats114" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 200.0
+offset_bottom = 200.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats115" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 250.0
+offset_bottom = 200.0
+text = "2"
+placeholder_text = "food"
+
+[node name="stats116" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = 150.0
+offset_right = 300.0
+offset_bottom = 200.0
+text = "1"
+placeholder_text = "wood"
+
+[node name="stats117" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 350.0
+offset_bottom = 200.0
+text = "3"
+placeholder_text = "metal"
+
+[node name="stats118" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = 150.0
+offset_right = 400.0
+offset_bottom = 200.0
+text = "1"
+placeholder_text = "lvl"
+
+[node name="stats119" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 450.0
+offset_bottom = 200.0
+text = "2"
+placeholder_text = "dmg"
+
+[node name="stats120" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = 150.0
+offset_right = 500.0
+offset_bottom = 200.0
+text = "2"
+placeholder_text = "range"
+
+[node name="stats121" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = 150.0
+offset_right = 550.0
+offset_bottom = 200.0
+
+[node name="cannon" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = 200.0
+offset_bottom = 250.0
+texture = ExtResource("13_xly4a")
+
+[node name="stats122" type="TextEdit" parent="."]
+offset_top = 200.0
+offset_right = 50.0
+offset_bottom = 250.0
+text = "2"
+placeholder_text = "hp"
+
+[node name="stats123" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = 200.0
+offset_right = 100.0
+offset_bottom = 250.0
+text = "1"
+placeholder_text = "moves"
+
+[node name="stats124" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 150.0
+offset_bottom = 250.0
+text = "2"
+placeholder_text = "pop"
+
+[node name="stats125" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 250.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats126" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 250.0
+offset_bottom = 250.0
+text = "2"
+placeholder_text = "food"
+
+[node name="stats127" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 250.0
+text = "1"
+placeholder_text = "wood"
+
+[node name="stats128" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = 200.0
+offset_right = 350.0
+offset_bottom = 250.0
+text = "8"
+placeholder_text = "metal"
+
+[node name="stats129" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 250.0
+text = "2"
+placeholder_text = "lvl"
+
+[node name="stats130" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = 200.0
+offset_right = 450.0
+offset_bottom = 250.0
+text = "4"
+placeholder_text = "dmg"
+
+[node name="stats131" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 500.0
+offset_bottom = 250.0
+text = "3"
+placeholder_text = "range"
+
+[node name="stats132" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = 200.0
+offset_right = 550.0
+offset_bottom = 250.0
+
+[node name="knight" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = 250.0
+offset_bottom = 300.0
+texture = ExtResource("14_mrlyi")
+
+[node name="stats133" type="TextEdit" parent="."]
+offset_top = 250.0
+offset_right = 50.0
+offset_bottom = 300.0
+text = "6"
+placeholder_text = "hp"
+
+[node name="stats134" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 100.0
+offset_bottom = 300.0
+text = "1"
+placeholder_text = "moves"
+
+[node name="stats135" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = 250.0
+offset_right = 150.0
+offset_bottom = 300.0
+text = "1"
+placeholder_text = "pop"
+
+[node name="stats136" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = 250.0
+offset_right = 200.0
+offset_bottom = 300.0
+text = "3"
+placeholder_text = "armor"
+
+[node name="stats137" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = 250.0
+offset_right = 250.0
+offset_bottom = 300.0
+text = "4"
+placeholder_text = "food"
+
+[node name="stats138" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 300.0
+offset_bottom = 300.0
+text = "0"
+placeholder_text = "wood"
+
+[node name="stats139" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = 250.0
+offset_right = 350.0
+offset_bottom = 300.0
+text = "8"
+placeholder_text = "metal"
+
+[node name="stats140" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = 250.0
+offset_right = 400.0
+offset_bottom = 300.0
+text = "2"
+placeholder_text = "lvl"
+
+[node name="stats141" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 450.0
+offset_bottom = 300.0
+text = "5"
+placeholder_text = "dmg"
+
+[node name="stats142" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 300.0
+
+[node name="stats143" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = 250.0
+offset_right = 550.0
+offset_bottom = 300.0
+
+[node name="stats12" type="TextEdit" parent="."]
+offset_top = -300.0
+offset_right = 50.0
+offset_bottom = -250.0
+text = "8"
+placeholder_text = "hp"
+
+[node name="stats13" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -300.0
+offset_right = 100.0
+offset_bottom = -250.0
+text = "3"
+placeholder_text = "armor"
+
+[node name="stats14" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -300.0
+offset_right = 150.0
+offset_bottom = -250.0
+text = "2"
+placeholder_text = "inc"
+
+[node name="stats15" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = -250.0
+text = "18"
+placeholder_text = "pop"
+
+[node name="stats16" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = -250.0
+text = "10"
+placeholder_text = "food"
+
+[node name="stats17" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = -250.0
+text = "5"
+placeholder_text = "wood"
+
+[node name="stats18" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = -250.0
+text = "5"
+placeholder_text = "metal"
+
+[node name="stats19" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = -250.0
+
+[node name="stats20" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = -250.0
+
+[node name="stats21" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = -250.0
+
+[node name="stats22" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -300.0
+offset_right = 550.0
+offset_bottom = -250.0
+
+[node name="stats23" type="TextEdit" parent="."]
+offset_top = -250.0
+offset_right = 50.0
+offset_bottom = -200.0
+text = "13"
+placeholder_text = "hp"
+
+[node name="stats24" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = -200.0
+text = "3"
+placeholder_text = "armor"
+
+[node name="stats25" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -250.0
+offset_right = 150.0
+offset_bottom = -200.0
+text = "3"
+placeholder_text = "inc"
+
+[node name="stats26" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = -200.0
+text = "25"
+placeholder_text = "pop"
+
+[node name="stats27" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = -200.0
+text = "25"
+placeholder_text = "food"
+
+[node name="stats28" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = -200.0
+text = "12"
+placeholder_text = "wood"
+
+[node name="stats29" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = -200.0
+text = "10"
+placeholder_text = "metal"
+
+[node name="stats30" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = -200.0
+
+[node name="stats31" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = -200.0
+
+[node name="stats32" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = -200.0
+
+[node name="stats33" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -250.0
+offset_right = 550.0
+offset_bottom = -200.0
+
+[node name="stats34" type="TextEdit" parent="."]
+offset_top = -200.0
+offset_right = 50.0
+offset_bottom = -150.0
+text = "3"
+placeholder_text = "hp"
+
+[node name="stats35" type="TextEdit" parent="."]
+offset_left = 50.0
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = -150.0
+text = "0"
+placeholder_text = "armor"
+
+[node name="stats36" type="TextEdit" parent="."]
+offset_left = 100.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = -150.0
+text = "1"
+placeholder_text = "inc"
+
+[node name="stats37" type="TextEdit" parent="."]
+offset_left = 150.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -150.0
+text = "6"
+placeholder_text = "food"
+
+[node name="stats38" type="TextEdit" parent="."]
+offset_left = 200.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = -150.0
+text = "0"
+placeholder_text = "wood"
+
+[node name="stats39" type="TextEdit" parent="."]
+offset_left = 250.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = -150.0
+text = "0"
+placeholder_text = "metal"
+
+[node name="stats40" type="TextEdit" parent="."]
+offset_left = 300.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = -150.0
+
+[node name="stats41" type="TextEdit" parent="."]
+offset_left = 350.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = -150.0
+
+[node name="stats42" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = -200.0
+offset_right = 450.0
+offset_bottom = -150.0
+
+[node name="stats43" type="TextEdit" parent="."]
+offset_left = 450.0
+offset_top = -200.0
+offset_right = 500.0
+offset_bottom = -150.0
+
+[node name="stats44" type="TextEdit" parent="."]
+offset_left = 500.0
+offset_top = -200.0
+offset_right = 550.0
+offset_bottom = -150.0
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(-185.435, 227)
+rotation = 3.14159
+scale = Vector2(-187.453, 48.0222)
+mesh = SubResource("QuadMesh_86cdn")
+texture = ExtResource("15_ekroy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -277.0
+offset_top = 251.0
+offset_right = -104.0
+offset_bottom = 352.0
+text = "projects,suggestions,
+communication at:
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = -277.0
+offset_top = 295.0
+offset_right = -33.0
+offset_bottom = 344.0
+theme_override_colors/default_color = Color(1, 0.933333, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "yamenebajy@gmail.com
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = -277.0
+offset_top = 177.0
+offset_right = -152.0
+offset_bottom = 209.0
+theme_override_colors/default_color = Color(1, 0.933333, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "made by:
+"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = -495.0
+offset_top = -330.0
+offset_right = -66.0
+offset_bottom = -271.0
+theme_override_colors/default_color = Color(1, 0.12549, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "pre_release_testing_build: 0.4.2"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkx8cyms77jji"]
+
+[ext_resource type="Script" path="res://farm.gd" id="1_ios4c"]
+[ext_resource type="Texture2D" uid="uid://dufm5ynvl28e4" path="res://farm.jpg" id="2_48fhm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_l508t"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_7tvlq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3xvhh"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_7tvlq")
+width = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_1uhs2"]
+size = Vector2(50, 50)
+
+[node name="farm" type="Node2D"]
+script = ExtResource("1_ios4c")
+
+[node name="bg" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_l508t")
+texture = SubResource("GradientTexture1D_3xvhh")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_1uhs2")
+texture = ExtResource("2_48fhm")

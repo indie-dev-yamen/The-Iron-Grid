@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://khvl6qwtgnrc"]
+
+[ext_resource type="Script" path="res://cannon.gd" id="1_2ix8l"]
+[ext_resource type="Texture2D" uid="uid://dikjq33snwrtq" path="res://cannon.png" id="2_xn52m"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2eo3d"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_h8smf"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sfbtu"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_h8smf")
+width = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_wb8yl"]
+size = Vector2(50, 50)
+
+[node name="cannon" type="Node2D"]
+script = ExtResource("1_2ix8l")
+metadata/selectable = true
+
+[node name="bg" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_2eo3d")
+texture = SubResource("GradientTexture1D_sfbtu")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_wb8yl")
+texture = ExtResource("2_xn52m")

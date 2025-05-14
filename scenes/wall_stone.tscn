@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvdtx3l4485lv"]
+
+[ext_resource type="Script" path="res://wall_stone.gd" id="1_skcf1"]
+[ext_resource type="Texture2D" uid="uid://c76kctj5ljehx" path="res://stone_wall.png" id="1_um5fs"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wmew6"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_1dfm3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ibs10"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_1dfm3")
+width = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_in83h"]
+size = Vector2(50, 50)
+
+[node name="wall_stone" type="Node2D"]
+script = ExtResource("1_skcf1")
+
+[node name="bg" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_wmew6")
+texture = SubResource("GradientTexture1D_ibs10")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 3.14159
+mesh = SubResource("QuadMesh_in83h")
+texture = ExtResource("1_um5fs")
