@@ -1,79 +1,158 @@
+# The Iron Grid
 
-## License
-This project is licensed under the Creative Commons BY-NC-ND 4.0 License.  
-[Read the full license here](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+---
 
-## contact
-For feedback, suggestions, or issues, feel free to open an **issue** on this GitHub repo or reach me at yamenebajy@gmail.com.
+## 📄 License
 
-## How to play
-1) after you launch the game, you will be faced with the stats screen, delete the default value to see what is it for, or check the stats screen info later in this file, change them as you wish and press start
-2) on the top of your screen you will find, left to write, information text, currently selected object icon which is default none and it can be pressed to clear selection or cancel commands, time left for this turn, navigation arrows you can press to move around the game grid, manual end turn button, turn information text, resources of current player
-3) you will see the game grid, green tiles are open space, tiles with wood are wood node resources, grey tiles are metal node resources
-4) on the first turn you are asked to choose any tile to place your main building at, your choice cant be changed after so be wise, after you place your building end your turn and pass for the next player
-5) after all players get their castles the true game starts, take turn to gather resources, build, train units, and destroy your enemies
-6) check building, units and systems sections for more info
+This project is licensed under the **Creative Commons BY-NC-ND 4.0 License**. Read the full license here
 
-## building:
-1) fort: the first phase of the main building, you can train a horse or a spearman, and you can evolve to castle
-2) castle: second phase, can upgrade to mega castle
-3) mega castle: third and last phase
-4) farm: gives food each turn with bonus if its adjacent to main
-5) mine: gives wood or metal each turn with bonus if its adjacent to main, can only be placed on metal or wood nodes
-6) barracks, allows to train other units
-7) wooden wall: an obstacle, requires castle phase to be built
-8) stone wall: the more annoying version of wooden wall, also requires castle phase
+---
 
-## units
-*all units can move, attack once per turn, and build any building except for the main buildings*
-1) spearman: can attack an adjacent unit and does bonus damage to horses
-2) horse: moves a lot, can only attack by moving to the tile the target is on, since a tile cant have two units on it, if the attack doesnt kill the target, the horse must have an extra move after attacking to move to a different empty tile, or else the attack isnt performed
-3) musketeer: ranged unit, check systems.7
-4) cannon: heavy ranged unit, check systems.7
-5) knight: heavily armored unit, check systems.2, can attack an adjacent unit
+**The Iron Grid** is a local turn-based strategy game built for multiple players on a single device. Choose your castle location, gather resources, train your army, and dominate your enemies in tactical warfare. With focus on strategy, customizable stats, and evolving structures, every match delivers a fresh and competitive experience.
 
-## systems
-1) the player with the last main building standing wins, if max number of turns is reached then the player with more health on their main wins, if there is a tie the resources and units are calculated
-2) a unit armor is a special value that, to deal damage to an armored unit, you must do more damage than its armor in one turn, or else your damage is totally ignored
-3) if you choose to build or train a thing or attack or move a unit, you are asked to choose an adjacent tile for it to be placed, you can cancel the action by cancelling your selection by presing that button on top left
-4) farms and mines adjacent to your main building give more resources
-5) each turn after selecting your main building you can choose one resource type and get some of it
-6) the number of units you can have at a moment is limited by yout population
-7) ranged units can only target and adjacent tile for attacking, then its projectile will move for its range in the selected direction
-8) upgrading main building is the only way to heal it, sometime it may be wiser to not upgrade
-9) units trained cant move on their first turn
+---
 
-## stats screen layout
-column 1 contains the number of players, starting resources for each player, number of wood and metal nodes, map size by tile, resources earned per farm or mine each turn(disabled for testing reasons, edit in the rows on right) and the bonus received for being adjacent to the main building
+## ✨ Features
 
-column 2 contains the max number of turns and the max time (second) for each turn
-the grid on the left is unit stats as follows
+* Turn-based gameplay for any number of local players
+* Castle evolution system: Fort → Castle → Mega Castle
+* Resource gathering (wood, metal, food)
+* Build and upgrade various structures
+* Train diverse units with unique abilities
+* Fully customizable game stats and random map
+* Victory through destruction, survival, or domination
 
-fort: health armor income population
+---
 
-castle: health armor income population food_cost wood_cost metal_cost
+## 🎮 How to Play
 
-mega_castle: health armor income population food_cost wood_cost metal_cost
+1. **Stats Screen**: Upon launching the game, you'll land on the stats screen. Delete the default values to reveal placeholders or refer to the detailed layout below. Adjust the game settings as desired, then press "Start."
 
-farm: health armor income food_cost wood_cost metal_cost
+2. **Interface Overview**: At the top of the screen (from left to right), you'll see:
 
-barracks: health armor food_cost wood_cost metal_cost
+   * info text
+   * Current selection icon (click to deselect or cancel actions)
+   * Timer for the current turn
+   * Navigation arrows (to move around the map)
+   * End Turn button
+   * Turn information
+   * Player resource display
 
-mine: health armor income food_cost wood_cost metal_cost
+3. **Map Grid Overview**:
 
-wooden_wall: health armor food_cost wood_cost metal_cost
+   * **Green tiles** = Open space
+   * **Tiles with wood** = Wood nodes
+   * **Gray tiles** = Metal nodes
 
-stone_wall: health armor food_cost wood_cost metal_cost
+4. **First Turn**: Players choose a tile to place their main building. This decision is permanent. Be strategic. After placing, end your turn and pass to the next player.
 
-spearman: health moves_per_turn population_required food_cost wood_cost metal_cost main_building_phase_required damage damage_to_horse
+5. **Game Loop**: Players take turns to:
 
-horse: health moves_per_turn population_required food_cost wood_cost metal_cost main_building_phase_required damage 
+   * Gather resources
+   * Build structures
+   * Train units
+   * Strategically eliminate opponents
 
-musketeer: health moves_per_turn population_required food_cost wood_cost metal_cost main_building_phase_required damage range
+6. **Victory Conditions**:
 
-cannon: health moves_per_turn population_required food_cost wood_cost metal_cost main_building_phase_required damage range
+   * Last player with a main building standing wins
+   * If max turns are reached, the player with the healthiest main wins
+   * Ties are resolved by comparing resources and remaining units
 
-knight: health moves_per_turn population_required food_cost wood_cost metal_cost main_building_phase_required damage 
+---
 
-## The-Iron-Grid
-The Iron Grid is a local turn-based strategy game for any number of players on one device. Choose your castle spot, gather resources, and evolve from Fort to Castle to Mega Castle. With simple units, deep tactics, and fully customizable stats, every match is a unique strategic battle!
+## 🏫 Buildings
+
+* **Fort**: First phase of main building. Trains Spearman and Horse. Evolves to Castle.
+* **Castle**: Second phase. Can upgrade to Mega Castle.
+* **Mega Castle**: Final phase.
+* **Farm**: Generates food each turn; bonus when adjacent to main building.
+* **Mine**: Generates wood or metal each turn (must be placed on a corresponding node); bonus near main.
+* **Barracks**: Trains advanced units.
+* **Wooden Wall**: Requires Castle phase; serves as an obstacle.
+* **Stone Wall**: Stronger wall; also requires Castle phase.
+
+---
+
+## 💪 Units
+
+(All units can move, attack once per turn, and construct non-main buildings.)
+
+* **Spearman**: attacks adjacent target; bonus damage vs. horses.
+* **Horse**: Mobile unit; must move to target's tile to attack. If target survives the attack and the horse got no more moves to retreat, the attack fails.
+* **Musketeer**: Ranged attacker. See "Systems.6".
+* **Cannon**: Heavy ranged unit. See "Systems.6".
+* **Knight**: Attacks adjacent target, heavily armored; see "Systems.1".
+
+---
+
+## 🧰 Systems
+
+* **Armor Mechanic**: Damage must exceed armor in a single attack to affect armored units; otherwise, it's ignored.
+* **Building & Action Confirmation**: When selecting a unit or building or commanding move or attack, you'll be prompted to select an adjacent tile. Cancel actions by clicking the top-left button.
+* **Adjacency Bonuses**: Farms and mines near your main building produce more.
+* **Main Resource Claim**: Select your main each turn to claim a bonus resource.
+* **Population Cap**: Your army is limited by available population provided by main building.
+* **Ranged Targeting**: Ranged units only target adjacent tiles for direction; then projectiles travel in that direction based on unit range.
+* **Main Upgrades**: Only way to heal your main building. Sometimes, it's wiser not to upgrade quickly.
+* **Fresh Units**: Newly trained units cannot act on the same turn.
+
+---
+
+## 🔢 Stats Screen Layout
+
+* **Column 1**:
+
+  * Number of players
+  * Starting resources
+  * Node count (wood, metal)
+  * Map size (tiles)
+  * Farm/mine output per turn *(disabled for testing)*
+  * Adjacency bonuses
+
+* **Column 2**:
+
+  * Max turns
+  * Max time (per turn, in seconds)
+
+* **Left Grid (Unit Stats)**:
+  Each row represents an entity with attributes like:
+
+  1) fort: health armor income population
+
+  2) castle: health armor income population food\_cost wood\_cost metal\_cost
+
+  3) mega\_castle: health armor income population food\_cost wood\_cost metal\_cost
+
+  4) farm: health armor income food\_cost wood\_cost metal\_cost
+
+  5) barracks: health armor food\_cost wood\_cost metal\_cost
+
+  6) mine: health armor income food\_cost wood\_cost metal\_cost
+
+  7) wooden\_wall: health armor food\_cost wood\_cost metal\_cost
+
+  8) stone\_wall: health armor food\_cost wood\_cost metal\_cost
+
+  9) spearman: health moves\_per\_turn population\_required food\_cost wood\_cost metal\_cost main\_building\_phase\_required damage damage\_to\_horse
+
+  10) horse: health moves\_per\_turn population\_required food\_cost wood\_cost metal\_cost main\_building\_phase\_required damage
+
+  11) musketeer: health moves\_per\_turn population\_required food\_cost wood\_cost metal\_cost main\_building\_phase\_required damage range
+
+  12) cannon: health moves\_per\_turn population\_required food\_cost wood\_cost metal\_cost main\_building\_phase\_required damage range
+
+  13) knight: health moves\_per\_turn population\_required food\_cost wood\_cost metal\_cost main\_building\_phase\_required damage
+
+---
+
+## ℹ️ Contact
+
+Got feedback or suggestions? Found a bug? Reach out!
+
+* Open an issue on this GitHub repo
+* Or email: [yamenebajy@gmail.com](mailto:yamenebajy@gmail.com)
+
+---
+
+Ready to rule The Iron Grid? Dive in, choose your strategy, and outplay them all!
